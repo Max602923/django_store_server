@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for item in books %}
+    <ul>
+        <li>{{ item.title }}</li>
+    </ul>
+{% endfor %}
+
+
+<form method="post" action="/payment/book">{% csrf_token %}
+    book name:<input type="text" name="name">
+    <select name="publisher_id">
+        {% for publisher in publishers %}
+            <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+        {% endfor %}
+    </select>
+</form>
+</body>
+</html>

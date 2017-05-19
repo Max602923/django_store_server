@@ -1,0 +1,96 @@
+modles            views          controllers
+数据库相关          模板            处理请求函数
+
+
+定义URL映射关系
+
+
+
+django安装
+安装Django，最新的版本1.7
+（1）首先使用easy_install安装pip（easy_install是Python的包管理工具，类似Ruby下的gem，pip是升级版的easy_install）， sudo easy_install pip
+（2）安装成功后，安装Django， pip install Django==1.9.6 ---->我用的是1.9.6的版本
+（3）查看安装路径：默认为/usr/bin，如果看到django-admin.py说明安装成功，django-admin.py是Django的管理工具，用来生成项目和应用
+
+project _name
+    project_name   --配置文件
+    app01
+    app02
+    app03
+
+1、创建Django程序
+    a.通过命令
+          django-admin    startproject   xxxx(工程名)
+          cd project_name
+          python manage.py startapp app_name(创建APP)
+    b.pycharm
+          创建Django程序
+          win:
+            终端,python python manage.py startapp01
+          mac:
+            option+R
+                startapp app01
+2、执行Django程序
+    进入project
+        python manage.py runserver 127.0.0.1:8000
+        点pycharm >
+3、django依赖数据库
+    配置，settings
+    生成数据库表：
+        python manage.py makemigrations #生成配置文件
+        python manage.py migrate        #根据配置文件创建数据库相关
+4、admin
+    python manage.py createsuperuser
+    ...
+    http://localhost:8000/admin/
+5、路由系统
+    1、静态路由
+    2、动态路由
+        按照顺序，第n个匹配的数据，交给函数的第n个参数，严格按照顺序
+        模板的方法，将匹配的参数，传给指定的形式参数
+    3、二级路由
+        app01
+            urls.py
+        project_name
+            URL: app01 -> include("app01.url")
+6、基本的数据库操作
+    ORM框架
+    code first
+        自己写类         ->数据库表
+    db first
+        自己用命令创建数据库表和字典    -> 创建类
+
+    本质：使用类进行数据库操作
+    a.创建类
+    b.配置
+        settings.py
+
+        INSTALLED_APPS = [
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+        'app01',
+         ]
+    b.使用命令根据类创建表
+        python manage.py makemigrations #生成配置文件
+        python manage.py migrate        #根据配置文件创建数据库相关
+    c.默认表名
+        appname_classname
+    d.
+        app的views中导入
+    e.
+        post提交数据
+            settings里边的操作：
+                MIDDLEWARE = [
+                    'django.middleware.security.SecurityMiddleware',
+                    'django.contrib.sessions.middleware.SessionMiddleware',
+                    'django.middleware.common.CommonMiddleware',
+                    # 'django.middleware.csrf.CsrfViewMiddleware',
+                    'django.contrib.auth.middleware.AuthenticationMiddleware',
+                    'django.contrib.messages.middleware.MessageMiddleware',
+                    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+                 ]
