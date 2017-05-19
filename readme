@@ -7,7 +7,7 @@ modles            views          controllers
 
 
 django安装
-安装Django，最新的版本1.7
+安装Django，最新的版本1.11
 （1）首先使用easy_install安装pip（easy_install是Python的包管理工具，类似Ruby下的gem，pip是升级版的easy_install）， sudo easy_install pip
 （2）安装成功后，安装Django， pip install Django==1.9.6 ---->我用的是1.9.6的版本
 （3）查看安装路径：默认为/usr/bin，如果看到django-admin.py说明安装成功，django-admin.py是Django的管理工具，用来生成项目和应用
