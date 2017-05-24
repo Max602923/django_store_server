@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="" method="post"> {% csrf_token %}
+
+    {{ book_form }}
+
+{#    <div class="form-control">#}
+{##}
+{#        {% for i in book_form %}#}
+{#            <div>#}
+{#                {{ i }}#}
+{#            </div>#}
+{#        {% endfor %}#}
+{##}
+{#    </div>#}
+
+    <input type="submit" value="创建图书">
+</form>
+
+</body>
+</html>

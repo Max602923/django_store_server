@@ -24,7 +24,7 @@ SECRET_KEY = '+095=cgri462rb7js=a1ax!0z2a3oay&$o2y$u)d^dsc#=rnj-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.1.10.97']
 
 # Application definition
 
@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app01',
+    'blog',
+    'synergymallservice',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +80,21 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME':'django',
-        'HOST':'',
+        'NAME':'cdb_test',
+        'HOST':'10.10.10.125',
         'PORT':'3306',
-        'USER':'root',
-        'PASSWORD':'',
+        'USER':'syndata',
+        'PASSWORD':'syn@0701',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #     'NAME':'django',
+    #     'HOST':'',
+    #     'PORT':'3306',
+    #     'USER':'root',
+    #     'PASSWORD':'',
+    # }
 }
 
 # Password validation

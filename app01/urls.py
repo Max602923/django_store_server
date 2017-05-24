@@ -21,4 +21,7 @@ urlpatterns = [
     url(r'^home/', views.home),
     url(r'^db_handle/', views.db_handle),
     url(r'^book/', views.book),
+    url(r'^book_form/', views.book_form),
+    url(r'^book_modelform/', views.book_modelform),
+    url(r'^test_form/', views.test_form_view),
 ]

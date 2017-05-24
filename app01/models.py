@@ -33,6 +33,10 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
     publication_date = models.DateField()
+    status_choices = (('publishered',u'已出版'),
+                      ('producing',u'待出版'),
+                      ('forbindden',u'禁书'))
+    status = models.CharField(choices=status_choices,max_length=32,default='producing')
     class Meta:
         verbose_name_plural=u"书籍"
     def __str__(self):

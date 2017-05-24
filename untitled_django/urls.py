@@ -26,4 +26,6 @@ urlpatterns = [
     url(r'^payment/', include("app01.urls")),
     url(r'^app02/', include("app02.urls")),
     url(r'^articles/2003/$', views.special_case_2003),
+    url(r'^saleinfo/', include("synergymallservice.urls")),
+    url(r'^api-auth/', include('rest_framework.urls',namespace='rest_framework')),
 ]
